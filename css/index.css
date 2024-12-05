@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #2d6a4f;
+  --secondary-color: #40916c;
+  --accent-color: #95d5b2;
+  --background-color: #f8faf8;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+}
+
+.login-image-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-image-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.login-image-section p {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 600px; /* Increased width */
+  background-color: white;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(45, 106, 79, 0.1);
+}
+
+.login-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Sign up Styles */
+
+.signup-container {
+  height: 100vh;
+  display: flex;
+}
+
+.signup-form-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.signup-image-section {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(45, 106, 79, 0.1);
+}
+
+.signup-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.signup-image-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.signup-image-section p {
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Sign up styles end */
+
+.form-control {
+  border-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(45, 106, 79, 0.25);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* From Uiverse.io by G4b413l */
+.newtons-cradle {
+  --uib-size: 50px;
+  --uib-speed: 1.2s;
+  --uib-color: #474554;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--uib-size);
+  height: var(--uib-size);
+}
+
+.newtons-cradle__dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  transform-origin: center top;
+}
+
+.newtons-cradle__dot::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+}
+
+.newtons-cradle__dot:first-child {
+  animation: swing var(--uib-speed) linear infinite;
+}
+
+.newtons-cradle__dot:last-child {
+  animation: swing2 var(--uib-speed) linear infinite;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    transform: rotate(70deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes swing2 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-70deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+/* From Uiverse.io by escannord */
+.loader {
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+.loader .ball {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ball {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 8px 5px, white 5%, black);
+  position: relative;
+  transform-origin: 50% -100px;
+}
+
+.ball:last-child {
+  animation: balance-right 1.2s infinite linear;
+}
+
+.ball:first-child {
+  animation: balance-left 1.2s infinite linear;
+}
+
+@keyframes balance-right {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-30deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes balance-left {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    transform: rotate(30deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image-section,
+  .login-form-section {
+    flex: none;
+  }
+
+  .login-image-section {
+    height: 30vh;
+  }
+
+  .login-form-section {
+    height: 70vh;
+  }
+
+  .login-form {
+    max-width: 100%;
+    padding: 30px;
+  }
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-form-section,
+  .signup-image-section {
+    flex: none;
+  }
+
+  .signup-form-section {
+    height: 70vh;
+  }
+
+  .signup-image-section {
+    height: 30vh;
+  }
+
+  .signup-form {
+    max-width: 100%;
+    padding: 30px;
+  }
+}

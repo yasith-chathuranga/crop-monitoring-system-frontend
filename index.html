@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assests/index/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assests/index/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assests/index/favicon-16x16.png" />
+    <link rel="manifest" href="/assests/index/site.webmanifest" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-image-section">
+        <h1>Welcome to Our Platform</h1>
+        <p>
+          Discover a world of possibilities. Secure, intuitive, and designed
+          with you in mind. Join us and unlock your potential.
+        </p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="250"
+          height="250"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        <div class="loader">
+          <span class="ball ball1"></span>
+          <span class="ball"></span>
+          <span class="ball"></span>
+          <span class="ball"></span>
+          <span class="ball"></span>
+        </div>
+      </div>
+      <div class="login-form-section">
+        <div class="login-form">
+          <h2>Login to Your Account</h2>
+          <form id="loginForm">
+            <div class="mb-4">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter your email"
+                autocomplete="current-email"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+            </div>
+            <div class="mb-4 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="rememberCheck"
+              />
+              <label class="form-check-label" for="rememberCheck"
+                >Remember me</label
+              >
+            </div>
+            <div id="loginFeedback" class="text-center mb-3"></div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <div class="text-center mt-4">
+              <a href="#" class="text-muted">Forgot Password?</a>
+            </div>
+            <div class="text-center mt-4">
+              <p class="text-muted">
+                Don't have an account?
+                <a href="/pages/signup.html" style="color: var(--primary-color)"
+                  >Sign Up</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

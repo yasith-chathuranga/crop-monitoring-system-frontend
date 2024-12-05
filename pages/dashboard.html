@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assests/index/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assests/index/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assests/index/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assests/index/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="/assests/main-logo.png" alt="Profile" />
+        <div class="card">
+          <div class="loader">
+            <p>Green</p>
+            <div class="words">
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-items">
+        <nav class="nav flex-column">
+          <a href="/pages/dashboard.html" class="nav-link active">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/pages/staff.html" class="nav-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Staffs</span>
+          </a>
+          <a href="/pages/field.html" class="nav-link">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Fields</span>
+          </a>
+          <a href="/pages/crop.html" class="nav-link">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Crops</span>
+          </a>
+          <a href="/pages/monitoring_log.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Monitoring Log</span>
+          </a>
+          <a href="/pages/equipment.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Equipments</span>
+          </a>
+          <a href="/pages/vehicle.html" class="nav-link">
+            <i class="fa-solid fa-tractor"></i>
+            <span>vehicles</span>
+          </a>
+          <a href="/logout" class="nav-link logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <small>© 2024 Green Shadow (Pvt) Ltd</small>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="search-bar">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search anything..."
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="live-time" id="liveTime">
+              <i class="far fa-clock me-2"></i>
+              <span id="currentDateTime"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="metric-card card-1">
+            <i class="fas fa-users icon"></i>
+            <h3>2,845</h3>
+            <p>Total Users</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric-card card-2">
+            <i class="fas fa-user-tie icon"></i>
+            <h3>147</h3>
+            <p>Staff Members</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric-card card-3">
+            <i class="fas fa-chart-line icon"></i>
+            <h3>15.7%</h3>
+            <p>Growth Rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/date_time.js"></script>
+  </body>
+</html>

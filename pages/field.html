@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fields Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assests/index/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assests/index/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assests/index/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assests/index/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="/assests/main-logo.png" alt="Profile" />
+        <div class="card">
+          <div class="loader">
+            <p>Green</p>
+            <div class="words">
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-items">
+        <nav class="nav flex-column">
+          <a href="/pages/dashboard.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/pages/staff.html" class="nav-link">
+            <i class="fa-solid fa-users"></i>
+            <span>Staffs</span>
+          </a>
+          <a href="/pages/field.html" class="nav-link active">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Fields</span>
+          </a>
+          <a href="/pages/crop.html" class="nav-link">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Crops</span>
+          </a>
+          <a href="/pages/monitoring_log.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Monitoring Log</span>
+          </a>
+          <a href="/pages/equipment.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Equipments</span>
+          </a>
+          <a href="/pages/vehicle.html" class="nav-link">
+            <i class="fa-solid fa-tractor"></i>
+            <span>vehicles</span>
+          </a>
+          <a href="/logout" class="nav-link logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <small>© 2024 Green Shadow (Pvt) Ltd</small>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="search-bar">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search anything..."
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="live-time" id="liveTime">
+              <i class="far fa-clock me-2"></i>
+              <span id="currentDateTime"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Field Button -->
+      <div class="mb-3">
+        <button
+          class="btn btn-add"
+          data-bs-toggle="modal"
+          data-bs-target="#fieldAddModal"
+        >
+          Add New Field
+        </button>
+      </div>
+
+      <!-- Field Add Modal -->
+      <div
+        class="modal fade"
+        id="fieldAddModal"
+        tabindex="-1"
+        aria-labelledby="fieldAddModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="fieldAddModalLabel">Add New Field</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-7">
+                    <form id="fieldForm">
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="fieldCode" class="form-label"
+                            >Field Code</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="fieldCode"
+                            name="fieldCode"
+                            disabled
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="fieldName" class="form-label"
+                            >Field Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="fieldName"
+                            name="fieldName"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="fieldLocationX" class="form-label"
+                            >Field Location X</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="fieldLocationX"
+                            name="fieldLocationX"
+                            step="any"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="fieldLocationY" class="form-label"
+                            >Field Location Y</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="fieldLocationY"
+                            name="fieldLocationY"
+                            step="any"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="fieldExtendedSize" class="form-label"
+                          >Field Extended Size (hectares)</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="fieldExtendedSize"
+                          name="fieldExtendedSize"
+                          step="any"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="fieldImage1" class="form-label"
+                          >Field Image 1</label
+                        >
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="fieldImage1"
+                          name="fieldImage1"
+                          accept="image/*"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="fieldImage2" class="form-label"
+                          >Field Image 2</label
+                        >
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="fieldImage2"
+                          name="fieldImage2"
+                          accept="image/*"
+                          required
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="image-preview-container mb-3">
+                      <div id="imagePreviewContent1">
+                        <div class="image-preview-placeholder">
+                          <i class="bi bi-image" style="font-size: 3rem"></i>
+                          <p>Image Preview 1</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="image-preview-container">
+                      <div id="imagePreviewContent2">
+                        <div class="image-preview-placeholder">
+                          <i class="bi bi-image" style="font-size: 3rem"></i>
+                          <p>Image Preview 2</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-clear" id="clearBtn">
+                Clear
+              </button>
+              <button
+                type="submit"
+                class="btn btn-save"
+                id="saveBtn"
+                form="fieldForm"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <h4>Crop Records</h4>
+        <div class="custom-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Field Code</th>
+                <th>Field Name</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="vehicleTableBody">
+              <!-- Table rows will be added here dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/date_time.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/field.js"></script>
+  </body>
+</html>

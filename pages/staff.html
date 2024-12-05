@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staffs Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assests/index/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assests/index/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assests/index/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assests/index/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="/assests/main-logo.png" alt="Profile" />
+        <div class="card">
+          <div class="loader">
+            <p>Green</p>
+            <div class="words">
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+              <span class="word">Shadow</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-items">
+        <nav class="nav flex-column">
+          <a href="/pages/dashboard.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/pages/staff.html" class="nav-link active">
+            <i class="fa-solid fa-users"></i>
+            <span>Staffs</span>
+          </a>
+          <a href="/pages/field.html" class="nav-link">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Fields</span>
+          </a>
+          <a href="/pages/crop.html" class="nav-link">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Crops</span>
+          </a>
+          <a href="/pages/monitoring_log.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Monitoring Log</span>
+          </a>
+          <a href="/pages/equipment.html" class="nav-link">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Equipments</span>
+          </a>
+          <a href="/pages/vehicle.html" class="nav-link">
+            <i class="fa-solid fa-tractor"></i>
+            <span>vehicles</span>
+          </a>
+          <a href="/logout" class="nav-link logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <small>© 2024 Green Shadow (Pvt) Ltd</small>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <div class="search-bar">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search anything..."
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="live-time" id="liveTime">
+              <i class="far fa-clock me-2"></i>
+              <span id="currentDateTime"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Staff Button -->
+      <div class="mb-3">
+        <button
+          class="btn btn-add"
+          data-bs-toggle="modal"
+          data-bs-target="#staffAddModal"
+        >
+          Add New Staff
+        </button>
+      </div>
+
+      <!-- Staff Add Modal -->
+      <div
+        class="modal fade"
+        id="staffAddModal"
+        tabindex="-1"
+        aria-labelledby="staffAddModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="staffAddModalLabel">
+                Staff Add Form
+              </h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="staffForm">
+                <div class="row g-3">
+                  <!-- Basic Information -->
+                  <div class="col-md-4">
+                    <label class="form-label">Staff ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="id"
+                      required
+                      disabled
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      required
+                    />
+                  </div>
+
+                  <!-- Professional Details -->
+                  <div class="col-md-4">
+                    <label class="form-label">Designation</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="designation"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Role</label>
+                    <select class="form-select" id="role" required>
+                      <option value="">Select Role</option>
+                      <option value="ADMINISTRATIVE">Administrative</option>
+                      <option value="MANAGER">Manager</option>
+                      <option value="SCIENTIST">Scientist</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Gender</label>
+                    <select class="form-select" id="gender" required>
+                      <option value="">Select Gender</option>
+                      <option value="MALE">Male</option>
+                      <option value="FEMALE">Female</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
+
+                  <!-- Dates -->
+                  <div class="col-md-6">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Joined Date</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="joinedDate"
+                      required
+                    />
+                  </div>
+
+                  <!-- Address -->
+                  <div class="col-md-6">
+                    <label class="form-label">Address Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressName"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Street/Lane</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressLane"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressCity"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">State</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressState"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Postal Code</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressCode"
+                      required
+                    />
+                  </div>
+
+                  <!-- Contact Information -->
+                  <div class="col-md-6">
+                    <label class="form-label">Contact Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="contactNo"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      required
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-clear"
+                id="clearBtn"
+                form="staffForm"
+                onclick="clear()"
+              >
+                Clear
+              </button>
+              <button
+                type="submit"
+                class="btn btn-save"
+                id="saveBtn"
+                form="staffForm"
+                onclick="saveStaff()"
+              >
+                Save
+              </button>
+              <button
+                type="submit"
+                class="btn btn-save"
+                id="updateBtn"
+                form="vehicleForm"
+                style="display: none"
+                onclick="updateStaff()"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <h4>Staff Records</h4>
+        <div class="custom-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Staff ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Role</th>
+                <th>Contact No</th>
+                <th>Email</th>
+                <th>Joined Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="staffTableBody">
+              <!-- Table rows will be added here dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/date_time.js"></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/staff.js"></script>
+  </body>
+</html>
